@@ -2,8 +2,8 @@
 
 {% block main %}
     {% for departamento in object_list %}
-        <a href="">{{ departamento }}</a>
-        <a href="">Deletar</a>
+        <a href="{% url 'edit_departamento' departamento.id %}">{{ departamento }}</a>
+        <a href="{% url 'delete_departamento' departamento.id %}">Deletar</a>
         <br>
     {% endfor %}
 
