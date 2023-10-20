@@ -4,4 +4,11 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def home(request):
-    return render(request, 'core/index.html')
+    usuario = request.user
+    return render(
+        request,
+        'core/index.html',
+        context={
+            'usuario': usuario
+        }
+    )
