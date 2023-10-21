@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% load bootstrap %}
 
 {% block main %}
     <div class="row">
         <div class="col">
             <form method="POST">
             {% csrf_token %}
-                {{ form }}
-                <button type="submit">Salvar</button>
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-success mt-2">Salvar</button>
             </form>
         </div>
     </div>
