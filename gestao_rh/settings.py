@@ -40,7 +40,7 @@ ROOT_URLCONF = 'gestao_rh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['base_templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,11 +85,18 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+# Nome do arquivo que ele irá procurar em cada app
+STATIC_URL = 'static/'  
 
+# Lista de caminhos onde o django vai procurar arquivos estáticos
+# além dos inseridos em app com o nome setado em STATIC_URL
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'base_static')
 ]
+
+# Onde o django vai concentrar todos os arquivos
+# estáticos no collectstatic/deploy
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = 'media/'
 

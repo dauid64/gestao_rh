@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for registro_rh in object_list %}
+        <a href="">{{ registro_rh }}</a>
+        <a href="">Deletar</a>
+        <br>
+    {% endfor %}
+
+    <a href="">Novo</a>
+{% endblock main %}
