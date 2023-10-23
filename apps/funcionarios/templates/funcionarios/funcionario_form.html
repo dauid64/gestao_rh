@@ -8,10 +8,12 @@
         <button type='submit' class="btn btn-success">Salvar</button>
     </form>
 
-    <a href="{% url 'create_documento' object.id %}" class="btn btn-info mt-2">Adicionar documento</a>
+    {% if object %}
+        <a href="{% url 'create_documento' object.id %}" class="btn btn-info mt-2">Adicionar documento</a>
+    {% endif %}
 
     {% for documento in object.documento_set.all %}
-    <br> <a href="{{ documento.arquivo.url }}">{{ documento }}</a>
+        <br> <a href="{{ documento.arquivo.url }}">{{ documento }}</a>
     {% endfor %}
 {% endblock main %}
 

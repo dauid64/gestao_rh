@@ -2,10 +2,12 @@
 
 {% block main %}
     {% for registro_rh in object_list %}
-        <a href="">{{ registro_rh }}</a>
-        <a href="">Deletar</a>
+        <a href="{% url 'edit_hora_extra' registro_rh.id %}">{{ registro_rh }}</a>
+        <a href="{% url 'delete_hora_extra' registro_rh.id %}">Deletar</a>
         <br>
+    {% empty %}
+        <h3>Não existem registros de hora extra no banco de dados</h3>
     {% endfor %}
 
-    <a href="">Novo</a>
+    <a href="{% url 'create_hora_extra' %}">Novo</a>
 {% endblock main %}
