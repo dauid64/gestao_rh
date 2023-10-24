@@ -30,7 +30,7 @@ class HoraExtraBaseEdit(UpdateView):
     form_class = RegistroHoraExtraForm
 
     def get_success_url(self):
-        return reverse_lazy('edit_hora_extra', kwargs={'pk': self.object.id})
+        return reverse_lazy('edit_hora_extra_base', kwargs={'pk': self.object.id})
 
     def get_form_kwargs(self):
         kwargs = super(HoraExtraBaseEdit, self).get_form_kwargs()
