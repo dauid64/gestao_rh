@@ -2,7 +2,7 @@
 
 {% block main %}
     {% for registro_rh in object_list %}
-        <a href="{% url 'edit_hora_extra' registro_rh.id %}">{{ registro_rh }}</a>
+        <a href="{% url 'edit_hora_extra_base' registro_rh.id %}">{{ registro_rh }}</a>
         <a href="{% url 'delete_hora_extra' registro_rh.id %}">Deletar</a>
         <br>
     {% empty %}

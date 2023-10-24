@@ -7,9 +7,10 @@ class RegistroHoraExtra(models.Model):
     motivo = models.CharField(max_length=100)
     funcionario = models.ForeignKey(Funcionario, on_delete=models.CASCADE)
     horas = models.DecimalField(max_digits=5, decimal_places=2)
+    utilizada = models.BooleanField(default=False)
 
     def get_absolute_url(self):
-        return reverse('edit_hora_extra', kwargs={"pk": self.id})
+        return reverse('edit_funcionario', kwargs={"pk": self.funcionario.id})
 
     def __str__(self):
         return self.motivo

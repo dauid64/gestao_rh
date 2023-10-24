@@ -5,15 +5,30 @@
     <form method="POST">
         {% csrf_token %}
         {{ form|bootstrap }}
-        <button type='submit' class="btn btn-success">Salvar</button>
+        <button type='submit' class="btn btn-success mt-2">Salvar</button>
     </form>
 
+    <h2>Documentos</h2>
+    <ul>
+        {% for documento in object.documento_set.all %}
+            <li><a href="{{ documento.arquivo.url }}">{{ documento }}</a></li>
+        {% endfor %}
+    </ul>
     {% if object %}
         <a href="{% url 'create_documento' object.id %}" class="btn btn-info mt-2">Adicionar documento</a>
     {% endif %}
 
-    {% for documento in object.documento_set.all %}
-        <br> <a href="{{ documento.arquivo.url }}">{{ documento }}</a>
-    {% endfor %}
+    <h2>Banco de horas</h2>
+    <ul>
+        {% for registro_hora in object.registrohoraextra_set.all %}
+            <li><a href="{% url 'edit_hora_extra' registro_hora.id %}">{{ registro_hora.motivo }} | {{ registro_hora.horas }}</a></li>
+        {% empty %}
+            Nenhuma hora cadastrada
+        {% endfor %}
+    </ul>
+
+    {% if object %}
+        <h3>Total de horas extras: {{ object.total_horas_extra }}</h3>
+    {% endif %}
 {% endblock main %}
 
