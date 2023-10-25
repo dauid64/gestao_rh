@@ -1,9 +1,11 @@
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView, View
+from django.http import HttpResponse
 from apps.funcionarios.models import Funcionario
 from .models import RegistroHoraExtra
 from .forms import RegistroHoraExtraForm
+import csv
 
 
 class HoraExtraList(ListView):
@@ -83,3 +85,25 @@ class NaoUtilizouHoraExtra(View):
                 'horas': funcionario.total_horas_extra
             }
         )
+
+
+class ExportarParaCSV(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="myfile.csv"'
+
+        empresa_logada = request.user.funcionario.empresa
+        registro_he = RegistroHoraExtra.objects.filter(
+            utilizada=False,
+            funcionario__empresa=empresa_logada
+        )
+
+        writer = csv.writer(response)
+        writer.writerow(['id', 'Motivo', 'Funcionário', 'Rest. func', 'Horas'])
+        for registro in registro_he:
+            writer.writerow([
+                registro.id, registro.motivo, registro.funcionario, 
+                registro.funcionario.total_horas_extra, registro.horas
+            ])
+
+        return response
