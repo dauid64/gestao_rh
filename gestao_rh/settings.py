@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +110,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
