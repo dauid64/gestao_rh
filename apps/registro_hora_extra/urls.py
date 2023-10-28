@@ -6,7 +6,8 @@ from .views import (
     HoraExtraCreate,
     UtilizouHoraExtra,
     NaoUtilizouHoraExtra,
-    ExportarParaCSV
+    ExportarParaCSV,
+    ExportarExcel
 )
 from django.urls import path
 
@@ -50,5 +51,10 @@ urlpatterns = [
         'exportar-csv/',
         ExportarParaCSV.as_view(),
         name='esportar_csv'
+    ),
+    path(
+        'exportar-excel/',
+        ExportarExcel.as_view(),
+        name='esportar_excel'
     )
 ]
