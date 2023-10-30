@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-puli43*uy#-#m9qk*@fga7#p$zuy%okp5i9mo)w4_c+-3@045z
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.215.131.14', '127.0.0.1']
+ALLOWED_HOSTS = ['18.215.131.14', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -117,3 +117,9 @@ CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'carlosdauid64br@gmail.com'
+EMAIL_HOST_PASSWORD = 'catf ttwa ltxx rlwc'
+EMAIL_USE_TLS = True

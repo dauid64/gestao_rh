@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
 from .serializers import UserSerializer, GroupSerializer
+from .tasks import send_relatorio
 from rest_framework import routers, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
@@ -17,6 +19,11 @@ def home(request):
             'usuario': usuario
         }
     )
+
+
+def celery(request):
+    send_relatorio.delay()
+    return HttpResponse('Tarefa incluida na fila para execução')
 
 
 class UserViewSet(viewsets.ModelViewSet):
