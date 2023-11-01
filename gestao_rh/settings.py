@@ -22,10 +22,12 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
+    'apps.app_antiga',
     'bootstrapform',
     'rest_framework',
     'rest_framework.authtoken',
     'django_celery_results',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'antigo': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'dbantigo.sqlite3',
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -123,3 +129,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'carlosdauid64br@gmail.com'
 EMAIL_HOST_PASSWORD = 'catf ttwa ltxx rlwc'
 EMAIL_USE_TLS = True
+
+DATABASE_ROUTERS = ['gestao_rh.db_routes.DBRoutes']

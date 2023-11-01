@@ -7,3 +7,9 @@ venv
 gestao_rh.pem
 static
 media
+uwsgi.ini
+uwsgi_params
+*.bak
+*.dat
+*.pid
+*.dir
