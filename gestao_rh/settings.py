@@ -60,16 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gestao_rh.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'antigo': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'dbantigo.sqlite3',
-    },
-}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -119,15 +110,12 @@ LOGOUT_REDIRECT_URL = 'login'
 
 CELERY_RESULT_BACKEND = 'django-db'
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
+
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'carlosdauid64br@gmail.com'
-EMAIL_HOST_PASSWORD = 'catf ttwa ltxx rlwc'
-EMAIL_USE_TLS = True
 
 DATABASE_ROUTERS = ['gestao_rh.db_routes.DBRoutes']
+
+from .local_settings import *
