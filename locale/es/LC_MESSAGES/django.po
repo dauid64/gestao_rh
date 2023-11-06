@@ -20,58 +20,58 @@ msgstr ""
 
 #: .\apps\core\templates\core\index.html:9
 msgid "Seja bem vindo"
-msgstr "Welcome"
+msgstr "Sea bienvenido"
 
 #: .\base_templates\header.html:4
 msgid "Gestao RH"
-msgstr "Management RH"
+msgstr "Gestión RH"
 
 #: .\base_templates\header.html:11
 msgid "Home"
-msgstr "Home"
+msgstr "Pagina principal"
 
 #: .\base_templates\header.html:14
 msgid "Funcionários"
-msgstr "Employees"
+msgstr "Empleados"
 
 #: .\base_templates\header.html:17
 msgid "Departamentos"
-msgstr "Departments"
+msgstr "Departamentos"
 
 #: .\base_templates\header.html:21
 msgid "Banco de Horas"
-msgstr "annual leave"
+msgstr "Banco de horas"
 
 #: .\base_templates\header.html:24
 #, fuzzy
 #| msgid "Gerenciar canco de horas"
 msgid "Gerenciar banco de horas"
-msgstr "Manage time bank"
+msgstr "Administrar horas"
 
 #: .\base_templates\header.html:25
 msgid "Exportar para CSV"
-msgstr "Export for CSV"
+msgstr "Exportar para CSV"
 
 #: .\base_templates\header.html:26
 msgid "Exportar para Excel"
-msgstr "Export for Excel"
+msgstr "Exportar para Excel"
 
 #: .\base_templates\header.html:27
 msgid "Novo"
-msgstr "New"
+msgstr "Nuevo"
 
 #: .\base_templates\header.html:31
 msgid "Logout"
-msgstr "Logout"
+msgstr "Cerrar sesión"
 
 #: .\gestao_rh\settings.py:125
 msgid "English"
-msgstr "English"
+msgstr "Inglés"
 
 #: .\gestao_rh\settings.py:126
 msgid "Portuguese"
-msgstr "Portuguese"
+msgstr "Portugués"
 
 #: .\gestao_rh\settings.py:127
 msgid "Spanish"
-msgstr "Spanish"
+msgstr "Español"
