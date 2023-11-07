@@ -3,7 +3,7 @@
 > Projeto com foco em se aprofundar em algumas funcionalidades avançadas do Django se baseando em um sistema de RH.
 
 ## 🤓 Aprendizados
-- Organização - Dividos os apps na pasta apps para centralizar as apps do projeto
+- Organização - Dividindo as apps na pasta "apps" para centraliza-las.
 
 - Class Based View - CRUD completos utilizando as classes genéricas que o Django fornece para facilitar a implementação e limpeza do código, além de sobscrever métodos para se torna adpativo aos requisitos de qualquer aplicação.
 
@@ -21,7 +21,7 @@
 
 ## 🚀 Instalando Gestao RH
 
-1) Na pasta main do projeto que é chamada "gestao_rh" crie um arquivo chamado local_settings e crie os suas configurações de banco de dados, E-mail e Celery url
+1) Na pasta main do projeto que é chamada "gestao_rh" crie um arquivo chamado local_settings e crie as suas configurações de banco de dados, E-mail e Celery url
 
 2) Linux e macOS:
     ```
