@@ -17,7 +17,9 @@
 
 - Celery - Uma das partes mais divertidas que foi a utilização do Celery para envio de e-mail assíncrono e também agendamento de tarefas com o Celery Beat.
 
-- Multiplos DB - Configuração das rotas para utilização de vários banco de dados em uma só aplicação
+- Multiplos DB - Configuração das rotas para utilização de vários banco de dados em uma só aplicação.
+
+- Traduções - Utilizei o sistema de traduções do Django para traduzir a aplicação para português, inglês e espanhol.
 
 ## 🚀 Instalando Gestao RH
 
