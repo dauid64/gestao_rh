@@ -13,6 +13,7 @@ class Funcionario(models.Model):
     empresa = models.ForeignKey(
         Empresa, on_delete=models.PROTECT, null=True, blank=True
     )
+    de_ferias = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nome
